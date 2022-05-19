@@ -7,9 +7,8 @@ from accounts.models import User
 from django.http import HttpResponseRedirect
 
 # Create your views here.
-<<<<<<< HEAD
 
-def loginProcess(request):
+def loginPage(request):
     if request.method == 'POST':      
             username = request.POST.get('username')
             password = request.POST.get('password')
@@ -24,22 +23,7 @@ def loginProcess(request):
                     messages.info(request, "Username or password is incorrect")
             else:
                 messages.info(request, "Enter username and password")
-
-def loginProcess(request):
-    if request.method == 'POST':
-            first_name = request.POST['first_name']
-            username = request.POST['username']
-            email = request.POST['email']
-            password1 =request.POST['password1']
-            password2 =request.POST['password2']
-            user = User.objects.create_user(username=username,password=password1,email=email,first_name=first_name)
-            user.save();
-            print("User created")
-            return redirect('login')
-
-    return render(request,"register.html")
+    return render(request, 'accounts/login.html')
             
-=======
-def loginPage(request):
-    return render(request,'accounts/login.html')
->>>>>>> accounts
+def registerPage(request):
+    return render(request, 'accounts/registration.html')

@@ -7,7 +7,7 @@ Login
 
 {% block body %}
 <link rel="stylesheet" href="{% static 'accounts/registration.css' %}">
-<div class="container">
+<div class="registerPage">
     <div class="logo">
         <h3 class="logoText">
             Sahayog
@@ -52,33 +52,12 @@ Login
           <span class="updates">Send me venue's and new venue updates</span>
         </label>
         </div>
-        <!-- <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          <input type="radio" name="gender" id="dot-3">
-          
-          <span class="gender-title">Gender</span>
-          <div class="category">
-            <label for="dot-1">
-            <span class="dot one"></span>
-            <span class="gender">Male</span>
-          </label>
-          <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="gender">Female</span>
-          </label>
-          <label for="dot-3">
-            <span class="dot three"></span>
-            <span class="gender">Other</span>
-            </label>
-          </div><br>
-          
-        </div> -->
+
         <div class="button">
           <input type="submit" value="Sign up">
         </div>
         <div style="text-align: center;">
-          <p class="signin">Already have an account? <a style="font-weight: 600; color: rgb(254, 27, 27);" href="{% url 'accounts:loginAsUser' %}">Login</a></p>
+          <p class="signin">Already have an account? <a style="font-weight: 600; color: rgb(254, 27, 27);" href="">Login</a></p>
         </div>
       </form>
     </div>
