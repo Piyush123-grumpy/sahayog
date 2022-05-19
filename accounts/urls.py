@@ -8,4 +8,5 @@ app_name='accounts'
 urlpatterns = [
     path("login", views.loginPage, name="loginPage"),
     path("register", views.registerPage, name="registerPage"),
+    path("success", views.success, name="success"),
 ]

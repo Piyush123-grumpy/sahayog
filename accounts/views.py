@@ -3,6 +3,7 @@ from django.contrib.auth import login as auth_login
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate,logout
 from django.contrib import messages
+from accounts.forms import CreateUserForm
 from accounts.models import User
 from django.http import HttpResponseRedirect
 
@@ -26,4 +27,29 @@ def loginPage(request):
     return render(request, 'accounts/login.html')
             
 def registerPage(request):
-    return render(request, 'accounts/registration.html')
+    current_user = request.user
+    if request.user.is_authenticated:
+        return redirect ('index')
+    else:
+        form = CreateUserForm()
+
+        if request.method == 'POST':
+            print(request.POST)
+            print("Got data")
+            form = CreateUserForm(request.POST)
+            if form.is_valid():
+                print("form valid")
+                form.save()
+                print("form saved")
+
+                return redirect('accounts:success')
+            else:
+                messages.error(request, "Error")
+                
+        context ={
+            'form':form,
+        }
+    return render(request, 'accounts/registration.html',context)
+
+def success(request): 
+    return render(request, "accounts/success.htm")
