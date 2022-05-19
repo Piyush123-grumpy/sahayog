@@ -7,6 +7,7 @@ from accounts.models import User
 from django.http import HttpResponseRedirect
 
 # Create your views here.
+<<<<<<< HEAD
 
 def loginProcess(request):
     if request.method == 'POST':      
@@ -38,3 +39,7 @@ def loginProcess(request):
 
     return render(request,"register.html")
             
+=======
+def loginPage(request):
+    return render(request,'accounts/login.html')
+>>>>>>> accounts

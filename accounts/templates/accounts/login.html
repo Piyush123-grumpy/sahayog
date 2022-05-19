@@ -1,0 +1,50 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}\
+Login
+{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'accounts/login.css' %}">
+<div class="loginpage">
+    <form class="login" method="POST">
+        {% csrf_token %}
+        <div align="center">
+            <h3 class="logoText">
+                Sahayog
+            </h3>
+        </div>
+        <h2>Login to your account</h2>
+        <div class="underline">
+            <hr>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <div class="input-group">
+                <input name="username" type="text" id="email" placeholder="loremipsum@test.com">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Password</label>
+            <div class="input-group-pass">
+                <input name="password" type="password" id="password" placeholder="•••••••••••">
+            </div>
+        </div>
+        <div class="fpass"><a href="">Forget Password?</a></div>
+        <div align="center">
+            <button type="submit" class="btn-signin">Sign in</button>
+        </div>
+        <div class="or">
+            <div></div>
+            <p>or</p>
+            <div></div>
+        </div>
+
+        <p class="signup">Don't have an account? <a style="font-weight: 600; color: rgb(254, 27, 27);"
+                href="">Register</a></p>
+    </form>
+
+</div>
+
+{% endblock %}
