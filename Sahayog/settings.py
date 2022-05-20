@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'donate.apps.DonateConfig',
     'mydonation.apps.MydonationConfig',
+    'Charity.apps.CharityConfig',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'Sahayog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,11 +82,11 @@ WSGI_APPLICATION = 'Sahayog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sahayog',
-        'USER': 'root',
-        'PASSWORD': 'root',
+        'NAME': 'Sahayog',
         'HOST': 'localhost',
         'PORT': '3306',
+        'USER': 'root',
+        'PASSWORD': 'root',
     }
 }
 
@@ -133,3 +134,7 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Managing media
+MEDIA_ROOT = os.path.join(BASE_DIR, 'Media')
+MEDIA_URL = '/Media/'
