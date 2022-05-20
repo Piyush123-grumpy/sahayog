@@ -65,7 +65,7 @@
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="{% url 'home:index' %}">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -100,7 +100,12 @@
       {% if user.is_authenticated %}
         <!-- Right elements -->
       <div class="d-flex align-items-center">
-
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="startFundraise nav-link" href="{% url 'charity:charity' %}">Start a fundraise</a>
+          </li>
+          </ul>
+        
         <div class="dropdown">
           <a
             class="text-reset me-3 dropdown-toggle hidden-arrow"
