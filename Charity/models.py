@@ -19,7 +19,7 @@ class Charity(models.Model):
     description = models.CharField(max_length=255)
     thumbnail = models.ImageField(upload_to='Charity')
     khalti = models.CharField(max_length=10)
-    created_date = models.DateField(auto_now_add=True, blank=True)
+    created_date = models.DateField(auto_now_add=True)
     requestedAmount = models.IntegerField()
 
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
