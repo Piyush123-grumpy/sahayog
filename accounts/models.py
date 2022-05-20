@@ -15,5 +15,5 @@ class User_info(models.Model):
 
     def __str__(self):
         return self.User.username
-    
+
 

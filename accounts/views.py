@@ -4,7 +4,7 @@ from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate,logout
 from django.contrib import messages
 from accounts.forms import CreateUserForm
-from accounts.models import User
+from accounts.models import User, User_info
 from django.http import HttpResponseRedirect
 
 # Create your views here.
@@ -39,9 +39,12 @@ def registerPage(request):
             form = CreateUserForm(request.POST)
             if form.is_valid():
                 print("form valid")
-                form.save()
-                print("form saved")
+                f = form.save()
+                f.save()
 
+                print(f.username)
+                print("form saved")
+                User_info.objects.create(User=f)
                 return redirect('accounts:success')
             else:
                 messages.error(request, "Error")
@@ -52,4 +55,4 @@ def registerPage(request):
     return render(request, 'accounts/registration.html',context)
 
 def success(request): 
-    return render(request, "accounts/success.htm")
+    return render(request, "accounts/success.html")
