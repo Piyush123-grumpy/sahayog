@@ -8,7 +8,6 @@ from accounts.models import User, User_info
 from django.http import HttpResponseRedirect
 
 # Create your views here.
-<<<<<<< HEAD
 
 def loginPage(request):
     if request.method == 'POST':      
@@ -57,7 +56,5 @@ def registerPage(request):
 
 def success(request): 
     return render(request, "accounts/success.html")
-=======
-def loginPage(request):
-    return render(request,'accounts/login.html')
->>>>>>> forgetpassword
+
+

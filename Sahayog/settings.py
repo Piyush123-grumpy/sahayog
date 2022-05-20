@@ -85,11 +85,11 @@ WSGI_APPLICATION = 'Sahayog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Sahayog',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'USER': 'root',
-        'PASSWORD': '',
+        'NAME': env('DATABASE_NAME'),
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('DATABASE_PASS'),
+        'HOST': env('DATABASE_HOST'),
+        'PORT': env('DATABASE_PORT')
     }
 }
 
@@ -145,5 +145,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'sahayog@gmail.com'
-EMAIL_HOST_PASSWORD = 'sahayog123'
+EMAIL_HOST_USER = 'sahayog577@gmail.com'
+EMAIL_HOST_PASSWORD = 'S@hayog123'
