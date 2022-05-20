@@ -2,25 +2,26 @@
 @import url(http://fontawesome.io/assets/font-awesome/css/font-awesome.css);
 * {
   margin: 0;
-  padding: 0;
+  padding: 0; 
 }
 
 body{
   font-family: 'Ubuntu', sans-serif !important;
 }
 #msform{
-  width:80%;
+  width:100%;
   margin: 50px auto;
   text-align: center;
   position: relative;
 }
 #msform fieldset{
+  width: 100% !important;
   background: white;
   border: 0 none;
   padding: 20px 30px;
   box-sizing: border-box;
   width: 80%;
-  margin: 5% 10%;
+  margin: 0 auto;
   position: absolute;
 }
 #msform fieldset:not(:first-of-type){
@@ -53,10 +54,11 @@ body{
 }
 
 .choiceRadio{
-  width: 550px !important;
+  width: 350px !important;
   height: 100px !important;
   color: #000 !important;
   background-color: white !important;
+  margin: 0 auto !important;
 }
 .btn-secondary {
   color: #fff;
@@ -70,6 +72,20 @@ body{
 .btn-secondary.focus,.btn-secondary:focus {
   box-shadow: 0 0 0 0.2rem #27ae5f7b !important;
 
+}
+
+.btn-group-vertical{
+  box-shadow: none;
+}
+.btn-group-vertical:hover{
+  box-shadow: none;
+}
+.choiceRadio{
+  border-radius: 5px !important;
+}
+.choiceRadio:hover{
+
+  box-shadow: 0 0 0 0.2rem #27ae5f7b !important;
 }
 
 .fs-title{
