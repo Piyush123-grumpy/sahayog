@@ -1,3 +1,4 @@
+from django.db import models
 from platform import mac_ver
 from django.db import models
 # Create your models here.
@@ -23,4 +24,3 @@ class Charity(models.Model):
     requestedAmount = models.IntegerField()
 
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-

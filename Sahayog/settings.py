@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'donate.apps.DonateConfig',
     'mydonation.apps.MydonationConfig',
-    'Charity.apps.CharityConfig',
+    'fundraise.apps.FundraiseConfig',
 ]
 
 MIDDLEWARE = [
@@ -89,7 +89,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '3306',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'root',
     }
 }
 
