@@ -79,15 +79,12 @@
               Fundraise for
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              {% for i in categories %}
               <li>
-                <a class="dropdown-item" href="#">Charity</a>
+                <a class="dropdown-item" href="#">{{i}}</a>
               </li>
-              <li>
-                <a class="dropdown-item" href="#">Medical</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Education</a>
-              </li>
+              {% endfor %}
+              
             </ul>
           </li>
         </ul>

@@ -5,5 +5,6 @@ from . import views
 app_name='fundraise'
 
 urlpatterns = [
-    path("", views.fundraisePage, name="charity")
+    path("", views.fundraisePage, name="charity"),
+    path("category/<int:category>/", views.viewCategory, name="category")
 ]
