@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,300;1,400&display=swap');
+
+body {
+background-color: #fadcb3;
+font-family: Nunito Sans;
+}
+.btn {
+background-color: #FECA76 ;
+width: 100%;
+color: #fff;
+padding: 10px;
+font-size: 18px;
+}
+.btn:hover {
+background-color: #2d3436;
+color: #fff;
+}
+input {
+height: 50px !important;
+}
+.form-control:focus {
+border-color: #FECA76;
+box-shadow: none;
+}
+h3 {
+    font-size: 28px !important;
+    font-style: 700;
+    font-weight: 800;
+    font-family: Poppins;
+    color: #1F3349;
+}
+p{
+    font-family: Poppins;
+
+}
+.cw {
+width: 35%;
+}
+@media(max-width: 992px) {
+.cw {
+width: 60%;
+}
+}
+@media(max-width: 768px) {
+.cw {
+width: 80%;
+}
+}
+@media(max-width: 492px) {
+.cw {
+width: 90%;
+}
+}
