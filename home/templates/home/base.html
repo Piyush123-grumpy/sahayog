@@ -97,17 +97,9 @@
       </div>
       <!-- Collapsible wrapper -->
 
-
+      {% if user.is_authenticated %}
+        <!-- Right elements -->
       <div class="d-flex align-items-center">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="/accounts/login">Signin</a>
-          </li>
-          </ul>
-        </div>
-  
-      <!-- Right elements -->
-      <!-- <div class="d-flex align-items-center">
 
         <div class="dropdown">
           <a
@@ -166,12 +158,23 @@
               <a class="dropdown-item" href="#">Settings</a>
             </li>
             <li>
-              <a class="dropdown-item" href="#">Logout</a>
+              <a class="dropdown-item" href="{% url 'accounts:logout' %}">Logout</a>
             </li>
           </ul>
         </div>
-      </div> -->
+      </div>
       <!-- Right elements -->
+      {% else %}
+      <div class="d-flex align-items-center">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/accounts/login">Signin</a>
+          </li>
+          </ul>
+        </div>
+        {% endif %}
+  
+      
     </div>
     <!-- Container wrapper -->
   </nav>
