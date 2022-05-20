@@ -52,7 +52,9 @@ body{
 #msform .action-button:hover, #msform .action-button:focus{
   box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
 }
-
+.next:disabled{
+  background-color: rgb(243, 233, 175) !important;
+}
 .choiceRadio{
   width: 350px !important;
   height: 100px !important;
@@ -66,7 +68,8 @@ body{
   border-color: #c8c8c8 !important;
 }
 .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
-  border-color: rgb(160, 160, 160) !important;
+  border-color: #27ae5f7b !important;
+  box-shadow: 0 0 0 0.2rem #27ae5f22 !important;
 }
 
 .btn-secondary.focus,.btn-secondary:focus {

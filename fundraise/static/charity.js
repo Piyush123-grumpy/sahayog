@@ -2,6 +2,9 @@
 
 $(function() {
 
+  $(".next").prop('disabled', true)
+  // if( $("#singlechoice").val() == "here's choice"){
+  // }
   var current_fs, next_fs, previous_fs,choice; 
   var left, opacity, scale; 
   var animating; 
@@ -57,10 +60,12 @@ $(function() {
   
   $("#label1").click(function(){
     $("#singlechoice").val("choice1")
+    $(".next").prop('disabled', false)
   })  
   
   $("#label2").click(function(){
    $("#singlechoice").val("choice2")
+   $(".next").prop('disabled', false)
   })  
   
   $(".next").click(function(){
