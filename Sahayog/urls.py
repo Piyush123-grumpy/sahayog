@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/',include('accounts.urls')),
     path('',include('home.urls')),
-    path('',include('Charity.urls')),
+    path('fundraise/',include('Charity.urls')),
     # path('donate/',include('donate.urls')),
     # path("mydonation/", include('mydonation.urls')),
 
