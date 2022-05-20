@@ -1,0 +1,26 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}
+Profile
+{% endblock %}
+{% block body%}
+<link rel="stylesheet" href="{% static 'accounts/profile.css' %}">
+
+    <div class="center">
+      <div class="our-team">
+        <div class="picture">
+          <img class="img-fluid" src="{{info.profile_picture.url}}">
+        </div>
+        <div class="team-content">
+          <h3 class="name">{{info.User.first_name}} {{info.User.last_name}}</h3>
+          <h4 class="title">Email: {{info.User.email}}</h4>
+          <h4 class="title">Phone: {{info.phone_number}}</h4>
+          <h5 class="title">city: {{info.city}}</h5>
+          <h6 class="title">address: {{info.address}}</h6>
+        </div>
+      <div class="profile">
+        <a class="setup" href="/accounts/User_info">Set Up profile</a>
+      </div>
+      
+
+{% endblock %}
