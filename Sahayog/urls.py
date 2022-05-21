@@ -27,6 +27,8 @@ urlpatterns = [
     path('fundraise/',include('fundraise.urls')),
     path('forget/', include('django.contrib.auth.urls')),
     path('donate/', include('donate.urls')),
+    # path('khalti/', include('khalti.urls')),
+
     # path('donate/',include('donate.urls')),
     # path("mydonation/", include('mydonation.urls')),
 

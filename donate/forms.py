@@ -6,4 +6,4 @@ class DonationForm(ModelForm):
         class Meta:
             model = Donation
             fields = ['amount', 'isAnonymous', 'donarName', 'donationMessage']
-
+            

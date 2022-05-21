@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sahayog</title>
 </head>
+
 <body>
-    <form action="/donate/" method="POST">
+    <form name="donationForm" action="/donate/" method="POST" id="sumbitForm">
         {% csrf_token %}
-        <input type="hidden" value = '{{fundraise.id}}' name="fundraise">
+        <input type="hidden" value='{{fundraise.id}}' name="fundraise">
         <h6>{{fundraise.title}}</h6>
         <input type="submit" value="Donate">
     </form>
+
 </body>
+
 </html>

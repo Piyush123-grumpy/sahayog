@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'donate.apps.DonateConfig',
     'mydonation.apps.MydonationConfig',
     'fundraise.apps.FundraiseConfig',
+    'rest_framework',
+    # 'khalti',
 ]
 
 MIDDLEWARE = [
@@ -148,3 +150,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'sahayog577@gmail.com'
 EMAIL_HOST_PASSWORD = 'S@hayog123'
+
+# Khalti integration
+# KHALTI_SECRET_KEY = "<your api key>"
+# KHALTI_VERIFY_URL = "https://khalti.com/api/v2/payment/verify/"

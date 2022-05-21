@@ -1,3 +1,4 @@
+from random import random
 from tkinter import CASCADE
 from django.db import models
 from django.contrib.auth.models import User
@@ -12,13 +13,18 @@ class Donation(models.Model):
     donarName = models.CharField(max_length=100)
     donationMessage = models.CharField(max_length=255)
     def __str__(self):
-        return self.categoryName
+        return self.donarName
 
 class Donated(models.Model):
     donation = models.ForeignKey(Donation, on_delete=models.CASCADE)
     isDonated = models.BooleanField(default = False)
     def __str__(self):
-        return self.categoryName
+        return self.donation.donarName
 
 
+class Payment(models.Model):
+    amount = models.IntegerField()
+    token = models.CharField(max_length=10)
 
+    def __str__(self) -> str:
+        return f"{self.token} - {self.amount}"
