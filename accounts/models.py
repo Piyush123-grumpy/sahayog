@@ -11,7 +11,7 @@ class User_info(models.Model):
     city=models.CharField(verbose_name="city",max_length=30, null=True, blank=True)
     address=models.CharField (verbose_name="Address",max_length=30, null=True, blank=True)
     phone_number=models.CharField(verbose_name="Phone Number",max_length=30, null=True, blank=True)
-    profile_picture=models.ImageField(upload_to='user_profile_pic',default='', null=True, blank=True)
+    profile_picture=models.ImageField(upload_to='',default='', null=True, blank=True)
 
     def __str__(self):
         return self.User.username

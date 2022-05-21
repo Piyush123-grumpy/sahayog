@@ -51,7 +51,6 @@ a {
 
 img {
   max-width: 100%;
-
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
@@ -66,7 +65,7 @@ img {
 }
 
 /*=============== HEADER & NAV ===============*/
-/* .header {
+.header {
   position: fixed;
   width: 100%;
   background-color: transparent;
@@ -135,9 +134,9 @@ img {
 }
 
 /* Show menu */
-/* .show-menu {
+.show-menu {
   top: 0;
-} */ */
+}
 
 
 
@@ -458,6 +457,7 @@ background-color: #ffffff;
 .accordion{
   display: flex;
   max-width: 1010px;
+  margin-left: 40px;
   width: 100%;
   align-items: center;
   justify-content: space-between;

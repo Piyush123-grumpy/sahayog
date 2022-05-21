@@ -1,0 +1,67 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}\
+Login
+{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'accounts/user_info.css' %}">
+<div class="registerPage">
+  <div class="logo">
+    <h3 class="logoText">
+      Sahayog
+    </h3>
+  </div><br>
+  <div class="title">Set up your account</div>
+
+  <div class="content">
+    <form class="form" method="POST" action="/accounts/User_info">
+      {% csrf_token %}
+      <div class="user-details CENTER">
+        
+        <div class="input-box">
+          <span class="details">City</span>
+          <input value="{{info.city}}" type="text"  name="City" />
+        </div>
+        <div class="input-box">
+          <span class="details">Address</span>
+          <input value="{{info.address}}" type="text" name="Address"  />
+        </div>
+        <div class="input-box">
+          <span class="details">Phone Number</span>
+          <input value="{{info.phone_number}}" type="number" name="Phone_number" />
+        </div>
+        <!-- <div class="input-box">
+          <span class="details">Image</span>
+          <input value="{{info.profile_picture.url}}" type="file" name="Profile_picture" />
+        </div> -->
+
+      </div>
+
+
+      <div class="button">
+        <input type="submit" value="Set Up">
+      </div>
+      <!-- <div style="text-align: center;">
+        <p class="signin">Already have an account? <a style="font-weight: 600; color: rgb(254, 27, 27);"
+            href="{% url 'accounts:loginPage' %}">Login</a></p>
+      </div> -->
+    </form>
+  </div>
+
+
+</div>
+<script>
+  var form_fields = document.getElementsByTagName('input')
+  form_fields[1].placeholder = 'City';
+  form_fields[2].placeholder = 'Adress';
+  form_fields[3].placeholder = 'Phone Number';
+  form_fields[4].placeholder = 'Email';
+
+
+  for (var field in form_fields) {
+    form_fields[field].className += ' form-control'
+  }
+</script>
+{% endblock %}
