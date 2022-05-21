@@ -1,4 +1,140 @@
 {% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}\
+Home
+{% endblock %}
 
 {% block body %}
+ <!--==================== MAIN ====================-->
+ <main class="main">
+    <!--==================== HOME ====================-->
+    <section class="home">
+        <div class="home__container container">
+            <div class="home__data">
+                {% comment %} <span class="home__subtitle">Donate Now</span> {% endcomment %}
+                <h1 class="home__title">Donate Now</h1>
+                <p class="home__description">
+                    Help someone who are in need.
+                </p>
+                <a href="#" class="home__button">
+                    सहयोग गरौ
+                </a>
+            </div>
+
+            <div class="home__img">
+                <img src="{% static 'home/original.png'%}" alt="">
+                {% comment %} <div class="home__shadow"></div> {% endcomment %}
+            </div>
+        </div>
+
+        <footer class="home__footer">
+            <span>(977) 987-654</span>
+            <span>|</span>
+            <span>info@sahayog.com</span>
+        </footer>
+    </section>
+
+    <section id ="features" class="section-p1">
+
+        <div class="fe-box">
+          <img src="{% static 'home/education.png'%}"  alt=" ">
+          <h6 class="a">Education</h6>
+        </div>
+        <div class="fe-box">
+          <img src="{% static 'home/health.png'%}" alt=" ">
+          <h6 class="b">Health</h6>
+        </div>
+        <div class="fe-box">
+          <img src="{% static 'home/environment.png' %}" alt=" ">
+          <h6 class="c">Environment</h6>
+        </div>
+        <div class="fe-box">
+          <img src="{% static 'home/disaster.png'%}" alt=" ">
+          <h6 class="d">Disaster</h6>
+        </div>
+
+      </section>
+
+      <section id="calltoAction"class="section-m1" >
+
+        <h4>Do you know ?</h4>
+        <h2>Up to <span> 48% </span>of children coming from extremely poor families are malnourished. </h2>
+        <button onclick="" type="button">Donate Now</button>
+
+      </section>
+
+
+        
+      <section id-"qna" class="section-m1">
+      <div class="accordion">
+        <div></div>
+        <div></div>
+
+
+        {% comment %} <div class="image-box">
+          <img src="{% static 'home/original.png'%}" alt="Accordion Image">
+        </div> {% endcomment %}
+        <div class="accordion-text">
+          <div class="title" align="center">Frequently Asked Questions</div>
+        <ul class="faq-text">
+          <li>
+            <div class="question-arrow">
+              <span class="question">Why Sahayog?</span>
+              <i class="bx bxs-chevron-down arrow"></i>
+            </div>
+            <p>Sahayog is a non profitable organization that has been established to help all the people that are in need. We aim to make world a better place.</p>
+            <span class="line"></span>
+          </li>
+          <li>
+            <div class="question-arrow">
+              <span class="question">How do we donate? </span>
+              <i class="bx bxs-chevron-down arrow"></i>
+            </div>
+            <p>You can donate through our khalti payment gate away. </p>
+            <span class="line"></span>
+          </li>
+          <li>
+            <div class="question-arrow">
+              <span class="question">How can we help the organization?</span>
+              <i class="bx bxs-chevron-down arrow"></i>
+            </div>
+            <p>You can simply donate us through khalti which will go to the maintenance of our website.</p>
+            <span class="line"></span>
+          </li>
+          <li>
+            <div class="question-arrow">
+              <span class="question">How do we donate? </span>
+              <i class="bx bxs-chevron-down arrow"></i>
+            </div>
+            <p>You can donate through our khalti payment gate away. </p>
+            <span class="line"></span>
+          </li>
+  
+        </ul>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+<!--=============== SCROLLREVEAL ===============-->
+<script src="assets/js/scrollreveal.min.js"></script>
+<script>
+  let li = document.querySelectorAll(".faq-text li");
+  for (var i = 0; i < li.length; i++) {
+    li[i].addEventListener("click", (e)=>{
+      let clickedLi;
+      if(e.target.classList.contains("question-arrow")){
+        clickedLi = e.target.parentElement;
+      }else{
+        clickedLi = e.target.parentElement.parentElement;
+      }
+     clickedLi.classList.toggle("showAnswer");
+    });
+  }
+</script>
+
+<!--=============== MAIN JS ===============-->
+<script src="{% static 'home/main.js'%}"></script>
 {% endblock %}
