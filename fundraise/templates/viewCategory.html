@@ -1,16 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body style="background-color:red;">
-    {% for i in fundraisers %}
-        <h1>{{i.id}}</h1>
-        <img src="{{i.thumbnail.url}}" alt="">
+{% extends 'home/base.html' %}
+{% load static %}
 
-    {% endfor %}
-</body>
-</html>
+{% block body %}
+    <link rel="stylesheet" href="{% static 'categorydisplay.css' %}">
+    <div style="margin-top: 120px !important" class="container mt-5 mb-3">
+        <h2>{{categoryName}}</h2>
+        <div class="row">
+            {% for i in fundraisers %}
+            <div class="col-md-4">
+                <div class="card p-3 mb-2">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                            <!-- <div class="icon"><img src="{% static 'poverty.jpg' %}" class=""></div> -->
+                                <div class="ms-2 c-details">
+                                    <h6 class="mb-0">{{i.user}}</h6><span>{{i.created_date}}</span>
+                                </div>
+
+                            </div>
+                            <div class="badge"> <span>{{i.category}}</span> </div>
+                        </div>
+                        <div class="img-ctn mb-3">
+                            <img src="{{i.thumbnail.url}}" class="col-12 mt-3" alt="">
+                        </div>
+                    <div class="mt-3">
+                        <h3 class="heading">{{i.title}}</h3>
+                        <!-- <div style="height: 70px; overflow:hidden;">
+                            <p>{{i.description}}</p>
+                            <br>
+                            <p></p>
+                        </div> -->
+                        <div class="mt-3">
+                            <div class="mt-3"> <span class="text1">Requested Amount: Npr {{i.requestedAmount}} </span> </div>
+                        </div>
+                        <!-- <div class="mt-1">
+                            <div> <span class="text1">0 collected <span class="text2">of {{i.requestedAmount}}</span></span> </div>
+                        </div> -->
+                    </div>
+                    <div class="butonCtn">
+
+                        <a href="{% url 'donate:donateform' i.id %}"class="button-28 mt-3" role="button">Learn More</a>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

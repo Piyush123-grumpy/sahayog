@@ -3,18 +3,22 @@ import random
 from django.shortcuts import redirect, render
 
 from donate.models import Payment
+from django.shortcuts import render
+
+from fundraise.models import Charity
 from .forms import DonationForm
 from fundraise.models import Charity
 # Create your views here.
 
-def donateform(request):
+def donateform(request, id):
+    fundraiseDetail = Charity.objects.get(id = id)
+    
     if(request.method=='POST'):
         form = DonationForm(request.POST)
-        fundraise = request.POST['fundraise']
-        charity = Charity.objects.get(id = fundraise)
-        print('fundraise::::::::::: ',charity)
-        print('user:::::::::::::', request.user)
-        print(fundraise)
+        # fundraise = request.POST['fundraise']
+        charity = Charity.objects.get(id = id)
+
+        
         if(form.is_valid()):
             f = form
             if form.cleaned_data.get('isAnonymous'):
@@ -27,10 +31,14 @@ def donateform(request):
                 f.save()
             payment = Payment.objects.create(token = f"TKN-{random.randint(1000,9999)}", amount = form.cleaned_data.get('amount'))
             print('PAYMENT DONE')
-        return render(request, 'donationform.html', {'form':DonationForm(), 'fundraise':fundraise})
+        return render(request, 'donationform.html', {'form':DonationForm(),'fundraise': charity, 'fundraiseDetail':fundraiseDetail})
 
-        # else:
-        #     fundraise = request.POST['fundraise']
-        #     return render(request, 'donationform.html', {'form':DonationForm()})
+
     else:
-        return redirect('')
+        form = DonationForm()
+
+    return render(request, 'donationform.html', {'form':DonationForm(), 'fundraiseDetail':fundraiseDetail})
+# def donateform(request,id):
+
+#     fundraiseDetail = Charity.objects.get(id = id)
+#     return render(request, 'donationform.html', {'form':DonationForm(), 'fundraiseDetail':fundraiseDetail})

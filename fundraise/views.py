@@ -30,8 +30,11 @@ def fundraisePage(request):
 
 
 def viewCategory(request, category):
+    categoryName = Category.objects.get(id = category)
     fundraisers = Charity.objects.filter(category = category)
-    return render(request, 'viewCategory.html', {'fundraisers':fundraisers})
+    return render(request, 'viewCategory.html', 
+    {'fundraisers':fundraisers,
+     'categoryName':categoryName})
         
     
 def viewFundraise(request, charity):
