@@ -64,33 +64,41 @@ def success(request):
 def logoutUser(request):
     logout(request)
     return redirect('home:index')
+
 def userinfo(request):
-    # user=request.user.id
-    # info=User_info.objects.get(User_id=user)
-    # print("ok")
-    # print(info.city)     
-    # print(info.address) 
-    # print(info.phone_number)        
+    user=request.user.id
+    info=User_info.objects.get(User_id=user)
+    print("ok")
+    print(info.city)     
+    print(info.address) 
+    print(info.phone_number)        
     # if request.method =="POST":
-    #     form=Userinfo(request.POST,instance=info)
+    #     form=Userinfo(request.POST,request.FILES,instance=info)
     #     print(form)
     #     if form.is_valid():
+    form=Userinfo()
+
             
-    #         form.save()
-    if request.method =="POST":
+    if request.method =="POST"or request.method == "FILES":
         city=request.POST.get('City')
         address=request.POST.get('Address')
         phone_number=request.POST.get('Phone_number')
-        picture=request.POST.get('Profile_picture')
+        picture=request.FILES.get('Profile_picture')
       
-        if User_info.objects.filter(User_id=request.user.id).exists():
-            print("okay")
-            User_info.objects.filter(User_id=request.user.id).update(city=city,address=address,phone_number=phone_number,profile_picture=picture)
+        if city:
+            info.city = city
+        if address:
+            info.address = address
+        if phone_number:
+            info.phone_number = phone_number
+        if picture:
+            info.profile_picture = picture
         
+        info.save()
         
+        return render(request,"accounts/User_profile.html",{'form':form, 'info':info})
 
-    form=Userinfo()
-    return render(request,"accounts/User_profile.html",{'form':form})
+    return render(request,"accounts/User_profile.html",{'form':form, 'info':info})
 
 def profile(request):
 

@@ -9,7 +9,7 @@ Profile
     <div class="center">
       <div class="our-team">
         <div class="picture">
-          <img class="img-fluid" src="{% static 'images/user.png' %}">
+          <img class="img-fluid" src="{{info.profile_picture.url}}">
         </div>
         <div class="team-content">
           <h3 class="name">{{info.User.first_name}} {{info.User.last_name}}</h3>
