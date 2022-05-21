@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en ">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +23,7 @@
     />
 
     <link rel="stylesheet" href="{% static 'home/base.css' %}">
+    <link rel="stylesheet" href="{% static 'home/index.css' %}">
 
 
     <title>
@@ -180,6 +181,47 @@
 
     {% block body %}
     {% endblock %}
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>Learn More</h4>
+            <ul>
+              <li><a href="#">How Sahayog Works</a></li>
+              <li><a href="#">Success Stories</a></li>
+              <li><a href="#">Why Sahayog</a></li>
+              <li><a href="#">Supported Countries</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Fundraise for</h4>
+            <ul>
+              <li><a href="#">Medical</a></li>
+              <li><a href="#">Emergency</a></li>
+              <li><a href="#">Memorial</a></li>
+              <li><a href="#">Education</a></li>
+              <li><a href="#">Nonprofit</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Sahayog</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Follow us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+   </footer>
 
         <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"></script>
