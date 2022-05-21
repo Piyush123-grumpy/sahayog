@@ -1,12 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {{ form }}
-</body>
-</html>
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block body %}
+
+<link rel="stylesheet" href="{% static 'donate.css' %}">
+<!-- <link rel="stylesheet" href="{% static 'charity.css' %}"> -->
+
+<section id="showcase">
+    <div class="container">
+        <img src="{{fundraiseDetail.thumbnail.url}}" class="img-fluid">
+    </div>
+</section>
+
+
+<div class="main-container">
+<div class="panel1">
+    <h1 class="title">{{fundraiseDetail.title}}</h1>
+    <h6>{{fundraiseDetail.created_date}}</h6>
+    <hr class="dash-hr">    
+    <h5 class="sub-title">Description</h5>
+    <p>{{fundraiseDetail.description}}</p>
+    <br>
+    <h2 class="fs-title">Fundraise Donate</h2>
+          <form class="donateForm">
+            <div class="form-group col-md-4">
+              <label for="formGroupExampleInput">Donar Name</label>
+              <br>
+            {{form.donarName}}
+            </div>
+              <div class="form-group col-md-4">
+              <label for="formGroupExampleInput2">Donation Amount</label>
+              <br>
+              {{form.amount}}
+              </div>
+              <div class="form-group col-md-4">
+                <label for="formGroupExampleInput2">Donation Message</label>
+                <br>
+                {{form.donationMessage}}
+                </div>
+                <!-- HTML !-->
+<button class="button-21" role="button">Donate</button>
+
+
+          </form>
+
+
+          
+
+
+
+
+        
+  
+</div>
+
+
+
+
+</div>
+{% endblock %}
