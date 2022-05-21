@@ -12,12 +12,13 @@ def fundraisePage(request):
         choice = request.POST.get("choiceFor")
         if(form.is_valid()):
             print(form.is_valid())
-            f=form.save()
+            f=form
             if choice == "choice1":
                 f.for_who = "For me or Someone Else"
             elif choice == "choice2":
                 f.for_who = "For Charity"
             f.user = request.user
+            f.fundraise  = Charity.objects.get(id=request.POST.get("fundraise"))
             f.save()
             return redirect ('/')
         else:
