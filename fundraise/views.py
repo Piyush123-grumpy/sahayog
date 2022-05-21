@@ -33,5 +33,8 @@ def viewCategory(request, category):
     return render(request, 'viewCategory.html', {'fundraisers':fundraisers})
         
     
-
+def viewFundraise(request, charity):
+    fundraise = Charity.objects.get(id=charity)
+    print(fundraise.title)
+    return render(request, 'viewFundraise.html', {'fundraise': fundraise})
 
