@@ -16,7 +16,7 @@ Login
   <div class="title">Set up your account</div>
 
   <div class="content">
-    <form class="form" method="POST">
+    <form class="form" method="POST" action="/accounts/User_info">
       {% csrf_token %}
       <div class="user-details CENTER">
         
@@ -26,16 +26,16 @@ Login
         </div>
         <div class="input-box">
           <span class="details">Address</span>
-          <input value="{{info.Address}}" type="text" name="Address"  />
+          <input value="{{info.address}}" type="text" name="Address"  />
         </div>
         <div class="input-box">
           <span class="details">Phone Number</span>
-          <input value="{{info.phone_number}" type="number" name="Phone_number" />
+          <input value="{{info.phone_number}}" type="number" name="Phone_number" />
         </div>
-        <div class="input-box">
+        <!-- <div class="input-box">
           <span class="details">Image</span>
-          <input value="{{info.profile_picture}}" type="file" name="Profile_picture" />
-        </div>
+          <input value="{{info.profile_picture.url}}" type="file" name="Profile_picture" />
+        </div> -->
 
       </div>
 

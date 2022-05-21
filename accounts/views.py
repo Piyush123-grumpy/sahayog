@@ -7,6 +7,9 @@ from pkg_resources import require
 from accounts.forms import CreateUserForm,Userinfo
 from accounts.models import User, User_info
 from django.http import HttpResponseRedirect
+from PIL import Image  
+import PIL  
+
 
 # Create your views here.
 
@@ -64,7 +67,10 @@ def logoutUser(request):
 def userinfo(request):
     # user=request.user.id
     # info=User_info.objects.get(User_id=user)
-    # print(info)            
+    # print("ok")
+    # print(info.city)     
+    # print(info.address) 
+    # print(info.phone_number)        
     # if request.method =="POST":
     #     form=Userinfo(request.POST,instance=info)
     #     print(form)
@@ -76,6 +82,7 @@ def userinfo(request):
         address=request.POST.get('Address')
         phone_number=request.POST.get('Phone_number')
         picture=request.POST.get('Profile_picture')
+      
         if User_info.objects.filter(User_id=request.user.id).exists():
             print("okay")
             User_info.objects.filter(User_id=request.user.id).update(city=city,address=address,phone_number=phone_number,profile_picture=picture)
@@ -87,7 +94,7 @@ def userinfo(request):
 
 def profile(request):
 
-    info=User_info.objects.get(User=request.user)
+    info=User_info.objects.get(User_id=request.user.id)
 
     # name=info.User_id.username
     print(info)
